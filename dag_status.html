@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airflow DAG Status</title>
+</head>
+<body>
+    <h1>Airflow DAG Status</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>DAG ID</th>
+                <th>State</th>
+                <th>Run Type</th>
+                <th>Execution Date</th>
+                <th>Active</th>
+                <th>Paused</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dag in dag_status_list %}
+            <tr>
+                <td>{{ dag['DAG ID'] }}</td>
+                <td>{{ dag['State'] }}</td>
+                <td>{{ dag['Run Type'] }}</td>
+                <td>{{ dag['Execution Date'] }}</td>
+                <td>{{ dag['Active'] }}</td>
+                <td>{{ dag['Paused'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
